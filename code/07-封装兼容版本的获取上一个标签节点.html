@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>preivousSibling和previousElementSibling</title>
+</head>
+<body>
+<ul>
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li><!--这是一个注释-->
+  <li id="li3">这是第3个li标签</li>
+  <li>这是第4个li标签</li>
+  <li>这是第5个li标签</li>
+  <li>这是第6个li标签</li>
+</ul>
+</body>
+</html>
+<script>
+  var li3 = document.getElementById("li3");
+//  console.log(li3.previousElementSibling);
+  
+//  var li = li3.previousSibling
+//  console.log(li.nodeType);
+//  console.log(li.nodeName);
+//  console.log(li.nodeValue);
+  var li = getPrevElement(li3)
+  console.log(li);
+  console.log(li.innerHTML);
+  /**
+   * 封装了一个兼容版本的获取上一个标签节点的函数
+   * @param ele
+   * @returns {*}
+   */
+  function getPrevElement(ele){
+    // ele是这个函数的一个形参，相当于是变量，只能在函数内部使用
+    if(ele&&ele.previousElementSibling) { // 标准的浏览器支持的方式 谷歌  火狐   高版本的IE浏览器
+      return ele.previousElementSibling
+    }else {
+     ele = ele.previousSibling
+      while(ele&&ele.nodeType!=1){
+        ele = ele.previousSibling  // 在当前的节点的基础上，继承向前获取节点
+      }
+      return ele
+    }
+  }
+
+  /*
+   * previousSibling
+   * 对于标准的浏览器来说，不但可以获取标签节点，还可以获取文本节点或注释节点
+   * 对于低版本的IE浏览器比如IE8及之前的浏览器，只会获得标签节点或是注释节点，而会忽略空白文本节点, 如果文本节点有内容的话，也是会获取到的
+   *
+   * previousElementSibling
+   * 对于标准的浏览器来说，只会获取下一个标签节点,会忽略文本或是注释节点
+   * 对低版本的IE浏览器比如IE8及之前的浏览器来说，不支持此属性nextElementSibling
+   *
+   * */
+  
+</script>

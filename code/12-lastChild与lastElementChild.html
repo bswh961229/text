@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lastChild/lastElementChild</title>
+</head>
+<body>
+<ul id="list">
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li id="li3">这是第3个li标签</li>
+  <li>这是第4个li标签</li>
+  <li>这是第5个li标签</li>
+  <li>这是第6个li标签</li>
+</ul>
+</body>
+</html>
+<script>
+  // undefined 是变量声明了，未赋值的状态    null是一个空值
+//  var li3 = document.getElementById("li3");
+//  console.log(li3);
+  var list = document.getElementById("list");
+  var li = getLastChild(list)
+  console.log(li);
+  console.log(li.innerHTML);
+  
+  function getLastChild(ele){
+    if(ele && ele.lastElementChild){
+      return ele.lastElementChild
+    }else {
+      if(ele){
+        ele = ele.lastChild    // 先获取一下最后一个节点
+        while(ele && ele.nodeType !=1){
+          ele = ele.previousSibling
+        }
+ 
+        return ele
+      }
+    }
+  }
+</script>

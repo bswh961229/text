@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>nextSibling与nextElementSibling</title>
+</head>
+<body>
+<ul>
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li id="li3">这是第3个li标签</li><!--添加了一个注释-->
+  <li>这是第4个li标签</li>
+  <li>这是第5个li标签</li>
+  <li>这是第6个li标签</li>
+</ul>
+</body>
+</html>
+<script>
+  var li3 = document.getElementById("li3");
+//  var li4 = li3.nextSibling    // sibling 兄弟姊妹 的意思
+//  console.log(li4);
+////  console.log(li4.innerHTML);
+//  console.log(li4.nodeType);
+//  console.log(li4.nodeValue);
+//  console.log(li4.nodeName);
+  
+  var li4 = li3.nextElementSibling
+  console.log(li4);
+  console.log(li4.nodeType);
+  console.log(li4.nodeValue);
+  console.log(li4.nodeName);
+  // nextSibling
+  /**
+   * nextSibling
+   * 对于标准的浏览器来说，不但可以获取标签节点，还可以获取文本节点或注释节点
+   * 对于低版本的IE浏览器比如IE8及之前的浏览器，只会获得标签节点或是注释节点，而会忽略空白文本节点, 如果文本节点有内容的话，也是会获取到的
+   *
+   * nextElementSibling
+   * 对于标准的浏览器来说，只会获取下一个标签节点,会忽略文本或是注释节点
+   * 对低版本的IE浏览器比如IE8及之前的浏览器来说，不支持此属性nextElementSibling
+   *
+   * next()
+   * nextAll()
+   */
+</script>

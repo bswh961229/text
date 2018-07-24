@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>对象</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  /**
+   * 对象的好处
+   * 1. 对象可以帮助我们封装一组数据，方便数据在程序中的传递
+   * 2. 对象可以帮助我们描述一组事物
+   *        程序中的        Array     Date   Math   string
+   *        现实生活中的    老师   学生   汽车     手机
+   *
+   *
+   * 自己封装一个函数，来实现获取一个日期字符串   输出的格式为: 2018-05-14 15:14:28
+   * Date()
+   */
+
+
+  function getDateString(date) {
+    var year = date.getFullYear()
+    var month = date.getMonth() + 1 //
+    var day = date.getDate()  //0
+    var hour = date.getHours()
+    var min = date.getMinutes()
+    var sec = date.getSeconds()
+
+//    if(month<10){    // 像这种简单的判断可以用如下的三元表达式来代替
+//      month = '0'+month
+//    }else {
+//      month = month
+//    }
+
+    month = month < 10 ? "0" + month : month
+    day = day < 10 ? "0" + day : day
+    hour = hour < 10 ? "0" + hour : hour
+    min = min < 10 ? "0" + min : min
+    sec = sec < 10 ? "0" + sec : sec
+
+    var str = year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + sec  // 拼接字符串
+    return str
+  }
+
+  var date = new Date()   //创建了一个日期对象
+
+  var res = getDateString(date)  // 调用方法,将创建的日期对象传进来
+  console.log(res);
+
+  // 2018-05-14 15:14:28
+
+
+  // new + 构造函数的方式来创建对象     批量的创建对象
+  // 对象字面量的方式来创建对象     一个或是少量的对象  var obj = {}
+
+  function f1() {
+    console.log(123);
+  }
+
+  f1()  // 函数的调用
+ 
+  var obj = {
+    f2: function () {
+      console.log(456);
+    }
+  }
+
+  obj.f2()  // 对象中方法的调用
+
+  var str = 'abc'
+  str.slice()
+
+  var arr = [10, 20, 200]
+  arr.slice()
+</script>

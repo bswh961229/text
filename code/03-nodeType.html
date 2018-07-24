@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>nodeType</title>
+</head>
+<body>
+<ul id="list"><!--这是一行注释-->
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li id="li3">这是第3个li标签</li>abc
+  <li>这是第4个li标签</li>
+</ul>
+<input type="text" class="txt123" id="txt">
+</body>
+</html>
+<script>
+  var ul = document.getElementById("list");
+  var lis = ul.childNodes  // 获取当前父标签的所有的子节点，放在一个伪数组当中
+  for(var i=0;i<lis.length;i++){
+//    console.log(lis[i].nodeType);   // nodeType是用数字表示
+//    console.log(lis[i].nodeValue);
+//    console.log(lis[i].nodeName);
+  }
+
+  /**
+   *        nodeType        nodeValue            nodeName
+   *  标签     1              null                 标签名
+   *  属性     2              属性值                属性名
+   *  文本     3              文本内容              #text
+   *  注释     8              注释的内容            #comment
+   */
+  
+  var txt = document.getElementById("txt");
+  var node= txt.getAttributeNode('class')
+  console.log(node.nodeType);
+  console.log(node.nodeValue);
+  console.log(node.nodeName);
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>复习</title>
+</head>
+<body>
+<ul>
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li>这是第3个li标签</li>
+  <li>这是第4个li标签</li>
+  <li>这是第5个li标签</li>
+  <li>这是第6个li标签</li>
+</ul>
+</body>
+</html>
+<script>
+  /**
+   * 1.  innerText/textContent
+   *      1. 都是可以用来获取标签间的内容  如果标签间是纯文本的话，则是直接获取，如果标签间还有嵌套标签的话，则会将嵌套标签忽略
+   *      2. 可以用来设置标签间的内容，如果要设置的内容是纯文本的话，则是直接设置,如果要设置的内容里面含有标签的话，则会将标签进行转义
+   *      3. 有兼容性的问题 innerText是谷歌和IE浏览器支持的低版本的火狐 浏览器不支持，是使用的textContent
+   *          textContent 是低版本的火狐 和谷歌 支持的，而低版本的IE浏览器比如IE8及之前的浏览器不支持
+   *
+   *
+   *     innerHTML
+   *      1. 都是可以用来获取标签间的内容  如果标签间是纯文本的话，则是直接获取，如果标签间还有嵌套标签的话，则会将嵌套标签及内容一并获取
+   *      2. 可以用来设置标签间的内容，如果要设置的内容是纯文本的话，则是直接设置,如果要设置的内容里面含有标签的话，则会将标签直接渲染在浏览器上
+   *      3. 没有兼容性的问题，任何浏览器都是支持的
+   *
+   *      能力检测：就是要看当前的浏览器是否支持此对象的属性或是方法
+   *
+   *  2. 与属性相关的API
+   *      setAttribute(属性名,属性值)
+   *      getAttribute(属性名)
+   *      removeAttribute(属性名)
+   *
+   *     方法或是函数是一样的，都有三要素    功能   参数    返回值
+   *
+   *  3.  与节点相关
+   *      childNodes     标准的属性
+   *      children       不是标准的DOM属性但是获得了所有的浏览器的支持
+   *
+   *      nextSibling      sibling  兄弟姊妹的意思
+   *      nextElementSibiling
+   *      previousSibling
+   *      previousElementSibling
+   *
+   *      firstChild
+   *      firstElementChild
+   *
+   *      lastChild
+   *      lastElementChild
+   *
+   */
+</script>

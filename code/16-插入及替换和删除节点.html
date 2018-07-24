@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>替换和删除 </title>
+</head>
+<body>
+<ul id="list">
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li id="li3">这是第3个li标签</li>
+  <li>这是第4个li标签</li>
+  <li>这是第5个li标签</li>
+  <li>这是第6个li标签</li>
+</ul>
+</body>
+</html>
+<script>
+  // 1.获得要操作的对象
+  var ul = document.getElementById("list");
+  var li3 = document.getElementById("li3");
+  var lis = ul.children
+  
+  // 2.是在第一个li标签的位置将li3的副本添加上
+//  var node = li3.cloneNode(true)
+  
+//  ul.insertBefore(node,lis[0])
+//  ul.insertBefore(li3,lis[0])
+  
+//  ul.replaceChild(li3,lis[0])
+  
+  ul.removeChild(li3)
+</script>

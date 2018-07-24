@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>firstChild与firstElementChild</title>
+</head>
+<body>
+<ul id="list">
+  <!--注释-->
+  <!--注释-->
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li id="li3">这是第3个li标签</li>
+  <li>这是第4个li标签</li>
+  <li>这是第5个li标签</li>
+  <li>这是第6个li标签</li>
+</ul>
+
+<ul></ul>
+</body>
+</html>
+<script>
+  
+  function getFirstChild(ele){
+    if(ele && ele.firstElementChild){  //标准浏览器支持的方式
+      return ele.firstElementChild
+    }else {
+      ele = ele.firstChild   //先获取一下第一个子节点
+//      if(ele && ele.nodeType !=1){
+//        ele = ele.nextSibling   // 先获得当前节点的下一个兄弟节点
+        while(ele&&ele.nodeType!=1){
+          ele = ele.nextSibling
+        }
+        return ele
+//      }else {
+//        return ele
+//      }
+    }
+  }
+  
+  var ul = document.getElementById("list");
+  var li = getFirstChild(ul)
+  console.log(li);
+  console.log(li.innerHTML);
+  /*
+   * firstChild
+   * 对于标准的浏览器来说，不但可以获取标签节点，还可以获取文本节点或注释节点
+   * 对于低版本的IE浏览器比如IE8及之前的浏览器，只会获得标签节点或是注释节点，而会忽略空白文本节点, 如果文本节点有内容的话，也是会获取到的
+   *
+   * firstElementChild
+   * 对于标准的浏览器来说，只会获取下一个标签节点,会忽略文本或是注释节点
+   * 对低版本的IE浏览器比如IE8及之前的浏览器来说，不支持此属性nextElementSibling
+   *
+   * */
+</script>

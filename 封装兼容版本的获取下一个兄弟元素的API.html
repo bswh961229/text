@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+    <li>第1个li标签</li>
+    <li>第2个li标签</li>
+    <li id="lis3">第3个li标签</li>
+    <li>第4个li标签</li>
+</ul>
+</body>
+</html>
+<script>
+    var lis3=document.getElementById("lis3")
+    var li4=lis3.nextSibling
+    console.log ( li4.nodeType);
+    console.log ( li4.nodeValue )
+    console.log ( li4.nodeName );
+
+
+
+    function getnextElement (ele) {
+    if(ele.nextElementSibling){
+        return ele.nextElementSibling
+    }else{
+        ele=ele.nextElementSibling
+        while (ele&&ele.nodeType!=1){
+            ele=ele.nextSibling
+        }
+        return ele
+    }
+}
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>封装兼容的获取下一个兄弟标签</title>
+</head>
+<body>
+<ul>
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li id="li3">这是第3个li标签</li><!--这是一个注释-->
+  <!--这是一个注释-->
+  <!--这是一个注释-->
+  <!--这是一个注释-->
+  <li>这是第4个li标签</li>
+  <li>这是第5个li标签</li>
+  <li>这是第6个li标签</li>
+</ul>
+</body>
+</html>
+<script>
+  /**
+   * 封装了一个兼容版本的获取下一个标签节点的函数
+   * @param ele
+   * @returns {*}
+   */
+  function getNextElement(ele){
+    // 能力检测:要看当前的浏览器是否支持此对象的属性或是方法
+    if(ele.nextElementSibling) { //谷歌或是火狐 或是高版本的IE浏览器支持的方式
+      return ele.nextElementSibling  // 将获取到的下一个标签节点返回
+    }else { // 低版本的IE浏览器    nextSibling
+      ele = ele.nextSibling   // 获取当前标签的下一个节点
+      while(ele&&ele.nodeType !=1){  // 判断一下当前的节点是否存在以及节点类型是什么
+        ele = ele.nextSibling   // 在当前的节点基础上再次获取下一个节点
+      }
+      return ele    // 将找到的节点返回
+    }
+  }
+
+//  next()
+  /**
+   * 找假
+   *   如果第一个值转换为boolean类型为真的话,则直接返回第二个数据,不管第二个数据是什么
+   *   如果第一个值转换为boolean类型为假的话,则直接返回，第二个数据不再运算
+   *
+   *   previousSibling       previous: 上一个或是前一个
+   *   preViousElementSibling
+   *
+   *   firstChild
+   *   firstElementChild
+   *
+   *   lastChild
+   *   lastElementChild
+   */
+  
+  var li3 = document.getElementById("li3");
+  var tag =  getNextElement(li3)
+  console.log(tag);
+  console.log(tag.nodeType);
+  console.log(tag.innerHTML);
+</script>

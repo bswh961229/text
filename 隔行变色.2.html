@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{list-style:none;
+        }
+        ul li{
+            width: 500px;
+            height: 40px;
+            text-align: center;
+            line-height:40px ;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li>死亡如风,常伴吾身</li>
+    <li>无形之刃,最为致命</li>
+    <li>均衡存乎万物之间</li>
+    <li>双眼失明丝毫不影响我带崩三路</li>
+    <li>圣银箭弩</li>
+    <li>浙江石头人</li>
+</ul>
+</body>
+</html>
+<script>
+    //1.二话不说,先获取要操作的对象
+// var ul=document.getElementById("list");
+// var lis=ul.children
+//     //2.设置隔行变色
+//     for(var i=0;i<lis.length;i++){
+//     if(i%2==0){
+//         lis[i].style.backgroundColor="blue"
+//     }else {
+//         lis[i].style.backgroundColor = "#ccc"
+//     }
+//         //.给li标签注册鼠标移入的事件
+//         var bg;
+//         lis[i].onmouseover = function () {
+//             bg = this.style.backgroundColor
+//             this.style.backgroundColor = "gray"
+//         }
+//         //4.当鼠标离开当前行的时候恢复颜色
+//         lis[i].onmouseout = function () {
+//             this.style.backgroundColor = bg
+//         }
+//     }
+
+    //1/获取要操作的对象
+    var ul=document.getElementById("list");
+    var lis=ul.children
+    //2.设置隔行变色
+    for(var i=0;i<lis.length;i++) {
+        if (i % 2 == 0) {
+            lis[i].style.backgroundColor = "yellow"
+        } else {
+            lis[i].style.backgroundColor = "purple"
+        }
+        //3.给li标签注册鼠标移入的事件
+        var bg;
+        lis[i].onmouseover = function () {
+            bg = this.style.backgroundColor
+            this.style.backgroundColor = "#ccc"
+        }
+        //4.当鼠标移出的时候恢复颜色
+        lis[i].onmouseout = function () {
+            this.style.backgroundColor = bg
+        }
+    }
+</script>

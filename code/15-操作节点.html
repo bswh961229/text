@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>操作节点</title>
+</head>
+<body>
+<div class="box1">
+ <p id="p1" class="aaa">这是一行纯文本 <a href="#">链接</a></p>
+</div>
+<div class="box2">
+
+</div>
+</body>
+</html>
+<script>
+  // cloneNode()   克隆节点
+  //
+  var p1 = document.getElementById("p1");
+  var box1 = document.querySelector(".box1");
+  var box2 = document.querySelector(".box2");
+  
+//  var node = p1.cloneNode(true)    // boolean   true/false    // 是在内存当中生成的一个一模一样的标签节点
+  // true 表示深度克隆，不但克隆标签及属性还会克隆标签间的一切内容
+  // false  参数为false或是不写的时候，表示浅克隆,只会克隆标签及属性
+//  console.log(node);
+  //  appendChild()   从父元素的最后一个子标签节点的最后追加  是从内存当中或是DOM树上剪切下来标签节点再追加
+//  box2.appendChild(node)
+  box2.appendChild(p1)
+
+  /**
+   * insertBefore()
+   * replaceChild()
+   * removeChild()
+   *
+   */
+</script>

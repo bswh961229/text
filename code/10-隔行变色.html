@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>隔行变色</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+    ul li {
+      width: 800px;
+      height: 60px;
+    }
+  </style>
+</head>
+<body>
+<ul id="list">
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li>这是第3个li标签</li>
+  <li>这是第4个li标签</li>
+  <li>这是第5个li标签</li>
+  <li>这是第6个li标签</li>
+</ul>
+</body>
+</html>
+<script>
+  /**
+   * 奇数行是红色
+   * 偶数行是蓝色
+   * 移动移入 当前行的时候，要变成紫色
+   * 鼠标离开这后，要恢复原来的颜色   在变成紫色 之前先把之前的颜色存一下
+   *
+   * children
+   * lis = ul.children
+   *
+   */
+  // 1.获得要操作的对象
+  var ul = document.getElementById("list");
+  var lis = ul.children  //只会获取子标签节点
+  
+  // 2.设置隔行变色
+  for(var i = 0; i <lis.length; i++) {
+    if(i%2==0){
+      lis[i].style.backgroundColor = 'red'
+    }else {
+      lis[i].style.backgroundColor = 'blue'
+    }
+    
+    // 3.给每一个li标签注册鼠标移入 的事件
+    var bg;
+    lis[i].onmouseover=function (){
+      bg = this.style.backgroundColor  //先将当前行的颜色存在一个变量 bg中
+      this.style.backgroundColor = 'green'  // 设置当前鼠标移入的这一行背景颜色为紫色
+    }
+    // 4.鼠标离开当前行的时候，要变回原来的颜色
+    lis[i].onmouseout=function (){
+      this.style.backgroundColor = bg
+    }
+  }
+</script>

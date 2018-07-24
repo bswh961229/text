@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    select {
+        width: 200px;
+        height: 150px;
+    }
+    </style>
+</head>
+<body>
+<select name="" id="all" multiple>
+    <option value="">白石茉莉奈</option>
+    <option value="">桃谷石里香</option>
+    <option value="">泷泽萝拉</option>
+    <option value="">佐佐木希</option>
+    <option value="">大桥未久</option>
+    <option value="">波多野结衣</option>
+</select>
+<input type="button" id="btn1" value=">>">
+<input type="button" id="btn2" value="<<">
+<input type="button" id="btn3" value=">">
+<input type="button" id="btn4" value="<">
+<select name="" id="sel" multiple>
+
+</select>
+</body>
+</html>
+<script>
+    //1.获得要操作的对象
+    var btn1=document.getElementById("btn1");
+    var btn2=document.getElementById("btn2");
+    var btn3=document.getElementById("btn3");
+    var btn4=document.getElementById("btn4");
+
+    //2.给事件源注册事件
+    // btn1.onclick=function () {
+    //     var all=document.getElementById("all");
+    //     var sel=document.getElementById("sel");
+    //     var options=all.children
+    //     for(var i=0;i<options.length;i++){
+    //         sel.appendChild(options[i])
+    //         i--
+    //     }
+    // }
+    //
+    // btn2.onclick=function () {
+    //     var all=document.getElementById("all");
+    //     var sel=document.getElementById("sel");
+    //     var options=sel.children
+    //     for(var i=0;i<options.length;i++){
+    //         all.appendChild(options[i])
+    //         i--
+    //     }
+    // }
+    //
+    // btn3.onclick=function () {
+    //     var all = document.getElementById("all");
+    //     var sel = document.getElementById("sel");
+    //     var options = all.children
+    //     for (var i = 0; i < options.length; i++) {
+    //         if (options[i].selected) {
+    //             sel.appendChild(options[i])
+    //             i--
+    //         }
+    //     }
+    // }
+    //
+    // btn4.onclick=function () {
+    //     var all = document.getElementById("all");
+    //     var sel = document.getElementById("sel");
+    //     var options = sel.children
+    //     for (var i = 0; i < options.length; i++) {
+    //         if (options[i].selected) {
+    //             all.appendChild(options[i])
+    //             i--
+    //         }
+    //     }
+    // }
+    //
+    // btn1.onclick=function () {
+    //     var all=document.getElementById("all");
+    //     var sel=document.getElementById("sel");
+    //     var options=all.children
+    //     for(var i=0;i<options.length;i++){
+    //         sel.appendChild(options[i])
+    //         i--
+    //     }
+    // }
+    //
+    // btn2.onclick=function () {
+    //     var all=document.getElementById("all");
+    //     var sel=document.getElementById("sel");
+    //     var options=sel.children
+    //     for(var i=0;i<options.length;i++){
+    //         all.appendChild(options[i])
+    //         i--
+    //     }
+    // }
+    //
+    // btn3.onclick=function () {
+    //     var all=document.getElementById("all")
+    //     var sel=document.getElementById("sel")
+    //     var options=all.children
+    //     for(var i=0;i<options.length;i++){
+    //         if(options[i].selected){
+    //             sel.appendChild(options[i])
+    //             i--
+    //         }
+    //     }
+    // }
+    //
+    // btn4.onclick=function () {
+    //     var all=document.getElementById("all")
+    //     var sel=document.getElementById("sel")
+    //     var options=sel.children
+    //     for(var i=0;i<options.length;i++){
+    //         if(options[i].selected){
+    //             all.appendChild(options[i])
+    //             i--
+    //         }
+    //     }
+    //
+    // }
+
+    // btn1.onclick=function () {
+    //     var all=document.getElementById("all");
+    //     var sel=document.getElementById("sel");
+    //     var options=all.children
+    //     for(var i=0;i<options.length;i++){
+    //         sel.appendChild(options[i])
+    //         i--
+    //     }
+    // }
+    //
+    // btn2.onclick=function () {
+    //     var all=document.getElementById("all");
+    //     var sel=document.getElementById("sel");
+    //     var options=sel.children
+    //     for(var i=0;i<options.length;i++){
+    //         all.appendChild(options[i])
+    //         i--
+    //     }
+    // }
+    //
+    // btn3.onclick=function () {
+    //     var all=document.getElementById("all");
+    //     var sel=document.getElementById("sel");
+    //     var options=all.children
+    //     for(var i=0;i<options.length;i++){
+    //         if(options[i].selected){
+    //             sel.appendChild(options[i])
+    //             i--
+    //         }
+    //
+    //     }
+    // }
+    //
+    // btn4.onclick=function () {
+    //     var all=document.getElementById("all");
+    //     var sel=document.getElementById("sel");
+    //     var options=sel.children
+    //     for(var i=0;i<options.length;i++){
+    //         if(options[i].selected){
+    //             all.appendChild(options[i])
+    //             i--
+    //         }
+    //     }
+    // }
+    btn1.onclick=function () {
+        var all=document.getElementById("all");
+        var sel=document.getElementById("sel");
+        var options=all.children
+        for(var i=0;i<options.length;i++){
+            sel.appendChild(options[i])
+            i--
+        }
+    }
+
+
+    btn2.onclick=function () {
+        var all=document.getElementById("all");
+        var sel=document.getElementById("sel");
+        var options=sel.children
+        for(var i=0;i<options.length;i++){
+            all.appendChild(options[i])
+            i--
+        }
+    }
+
+    btn3.onclick=function () {
+        var all=document.getElementById("all");
+        var sel=document.getElementById("sel");
+        var options=all.children
+        for(var i=0;i<options.length;i++){
+            if(options[i].selected){
+                sel.appendChild(options[i])
+                i--
+            }
+        }
+
+    }
+
+    btn4.onclick=function () {
+        var all=document.getElementById("all");
+        var sel=document.getElementById("sel");
+        var options=sel.children
+        for(var i=0;i<options.length;i++){
+            if(options[i].selected){
+                all.appendChild(options[i])
+                i--
+            }
+        }
+    }
+</script>

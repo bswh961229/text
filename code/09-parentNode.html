@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>parentNode</title>
+</head>
+<body>
+<div>
+  <p id="p1"></p>
+</div>
+</body>
+</html>
+<script>
+  var p1 = document.getElementById("p1");
+  var box = p1.parentNode   // 只会获得当前元素的父标签节点
+  console.log(box);
+</script>

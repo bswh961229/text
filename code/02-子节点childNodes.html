@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>childNodes</title>
+</head>
+<body>
+<ul id="list">
+  <li>这是第1个li标签</li>
+  <li>这是第2个li标签</li>
+  <li id="li3">这是第3个li标签</li>abc
+  <li>这是第4个li标签</li>
+</ul>
+</body>
+</html>
+<script>
+  var ul = document.getElementById("list");
+  var lis = ul.childNodes      //  nextSibling
+  console.log(lis);
+  console.log(lis.length);
+//  var lis = ul.children
+
+//  console.log(lis);
+//  console.log(lis.length);
+  
+  // childNodes  是标准的DOM属性，不但获得子标签节点，还会获得文本节点，不管文本是否为空
+  // children  不是标准的DOM属性，但是却获得了所有的浏览器的支持
+  
+
+</script>
